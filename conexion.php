@@ -22,7 +22,7 @@ $host = getenv('MYSQLHOST') ?: (getenv('DB_HOST') ?: 'localhost');
 $user = getenv('MYSQLUSER') ?: (getenv('DB_USER') ?: 'root');
 $pass = getenv('MYSQLPASSWORD') ?: (getenv('DB_PASS') ?: '');
 $db   = getenv('MYSQLDATABASE') ?: (getenv('DB_NAME') ?: 'la_103');
-$port = (int)(getenv('MYSQLPORT') ?: (getenv('DB_PORT') ?: 28578));
+$port = (int)(getenv('MYSQLPORT') ?: (getenv('DB_PORT') ?: 3306));
 
 $conexion = mysqli_init();
 
