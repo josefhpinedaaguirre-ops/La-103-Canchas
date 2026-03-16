@@ -1,0 +1,16 @@
+{
+    "functions": {
+        "**/*.php": {
+            "runtime": "vercel-php@0.7.1"
+        }
+    },
+    "routes": [
+        { "src": "^/$",              "dest": "/registro.html" },
+        { "src": "^/index$",         "dest": "/index.php" },
+        { "src": "^/(.*\\.php)$",    "dest": "/$1" },
+        { "src": "^/(.*\\.html)$",   "dest": "/$1" }
+    ],
+    "env": {
+        "APP_ENV": "production"
+    }
+}

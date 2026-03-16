@@ -1,0 +1,34 @@
+# ============================================================
+# .htaccess — Canchas La 103
+# Configuración Apache para Render / hosting compartido
+# ============================================================
+
+Options -Indexes
+
+# Página de inicio por defecto
+DirectoryIndex registro.html index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirigir raíz al login
+    RewriteRule ^$ registro.html [L]
+</IfModule>
+
+# Proteger archivos sensibles
+<FilesMatch "\.(env|sql|log|md|json|yaml|yml)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteger Dockerfile
+<Files "Dockerfile">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>

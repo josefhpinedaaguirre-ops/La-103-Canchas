@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$nombre', '$correo', '$pass_encriptada', 'cliente')";
 
     if (mysqli_query($conexion, $sql)) {
-        echo "<script>alert('Registro exitoso, ya puedes iniciar sesión'); window.location.href='login.html';</script>";
+        echo "<script>alert('Registro exitoso, ya puedes iniciar sesión'); window.location.href='registro.html';</script>";
     } else {
         echo "Error: " . mysqli_error($conexion);
     }

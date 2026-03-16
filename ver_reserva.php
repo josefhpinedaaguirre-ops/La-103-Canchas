@@ -4,7 +4,7 @@ include("conexion.php");
 
 // 1. Verificamos que el usuario esté logueado
 if (!isset($_SESSION['id'])) {
-    header("Location: reservar.html");
+    header("Location: registro.html");
     exit();
 }
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['id'])) {
-    header("Location: reservar.html"); // Si no hay sesión, lo devuelve al login
+    header("Location: registro.html"); // Si no hay sesión, lo devuelve al login
     exit();
 }
 ?>

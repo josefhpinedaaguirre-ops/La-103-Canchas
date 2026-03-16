@@ -1,0 +1,24 @@
+# ============================================================
+# render.yaml — Canchas La 103
+# Infrastructure-as-code para deploy automático en Render
+# Docs: https://render.com/docs/infrastructure-as-code
+# ============================================================
+
+services:
+  - type: web
+    name: canchas-la-103
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DB_HOST
+        sync: false        # Ingresar manualmente en el dashboard de Render
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_NAME
+        value: la_103
